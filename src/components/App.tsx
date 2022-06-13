@@ -3,28 +3,11 @@ import { FC, Suspense, useEffect, useRef } from 'react';
 import { Switch, Route, Redirect, useLocation } from 'react-router-dom';
 import { useData } from '../hooks';
 import { Footer, Header } from '../features';
-import {
-  About,
-  Blog,
-  Contact,
-  Home,
-  JustReleased,
-  Press,
-  Projects,
-} from '../pages';
+import { Home } from '../pages';
 // import { Spinner } from './Icons';
-import { soundcloudData } from '../data';
 import Spacer from './Spacer';
-// import { Third } from '.';
-import { PlaylistProvider } from '../hooks/usePlaylist';
 import { Amplitude } from '../amplitude/amplitude';
 import './App.scss';
-
-// const ThirdSpinner = () => (
-//   <Third>
-//     <Spinner />
-//   </Third>
-// );
 
 const App: FC<Record<string, unknown>> = () => {
   const { pathname } = useLocation();
@@ -46,30 +29,20 @@ const App: FC<Record<string, unknown>> = () => {
   }, [pathname]);
 
   return (
-    // @ts-ignore
-    <PlaylistProvider apiTracks={data?.tracks || soundcloudData.tracks}>
-      <div className="App">
-        <div className="App--Background" />
-        {/* <Noise /> */}
-        <Header />
-        <Spacer spacing={81} />
-        <div className="AppBody">
-          <Suspense fallback={<div />}>
-            <Switch>
-              {/* Home */}
-              <Route exact path="/" component={JustReleased} />
-              <Route exact path="/blog" component={Blog} />
-              <Route exact path="/press" component={Press} />
-              <Route exact path="/credits" component={Projects} />
-              <Route exact path="/about" component={About} />
-              <Route exact path="/contact" component={Contact} />
-              <Redirect to="/" />
-            </Switch>
-          </Suspense>
-        </div>
-        <Footer />
+    <div className="App">
+      <div className="App--Background" />
+      <Header />
+      <Spacer spacing={81} />
+      <div className="AppBody">
+        <Suspense fallback={<div />}>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Redirect to="/" />
+          </Switch>
+        </Suspense>
       </div>
-    </PlaylistProvider>
+      <Footer />
+    </div>
   );
 };
 

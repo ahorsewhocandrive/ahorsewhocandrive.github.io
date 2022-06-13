@@ -7,7 +7,7 @@ const Header = () => (
   <header>
     <div className="Header--Content">
       <Link className="Name" hideUnderline to="/">
-        <Heading>John Fio</Heading>
+        <Heading>{'🐴🚗'}</Heading>
       </Link>
       <Spacer />
       <Nav />

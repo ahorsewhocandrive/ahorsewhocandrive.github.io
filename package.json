@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/rafgraph/spa-github-pages.git"
   },
-  "author": "John Fio <john@audiosprite.com>",
+  "author": "a horse who can drive <ahorsewhocandrive@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "amplitude-js": "^8.1.0",

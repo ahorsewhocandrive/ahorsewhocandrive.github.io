@@ -20,7 +20,9 @@
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier"
   ],
-  "rules": {},
+  "rules": {
+    "@typescript-eslint/explicit-module-boundary-types": "off"
+  },
   "overrides": [
     {
       "files": ["**/*.tsx"],
